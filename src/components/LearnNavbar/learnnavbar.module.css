@@ -1,0 +1,44 @@
+@font-face{
+    font-family: Upakarti;
+    src:url(../../assets/Upakarti.ttf)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    /* padding: 1em 0; */
+    height: 90vh;
+}
+
+.title{
+    font-family: Upakarti;
+    font-size: 4.5em;
+    font-weight: 500;
+    color: black;
+}
+
+.items{
+    display: grid;
+    grid-template-rows: 4;
+    row-gap: 1em;
+}
+
+.item{
+    text-decoration: none;
+    font-size: larger;
+    text-align: center;
+    color: brown;
+    background-color: burlywood;
+    border-radius: 5px;
+    padding: .5em .75em;
+    font-weight: 700;
+}
