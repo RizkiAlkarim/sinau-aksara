@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import style from "./learnnavbar.module.css"
 
 function LearnNavbar() {
@@ -5,9 +6,9 @@ function LearnNavbar() {
     <nav className={style.container}>
       <h1 className={style.title}>LEARN</h1>
       <ul className={style.items}>
-        <a className={style.item} href="#">Hanacaraka</a>
-        <a className={style.item} href="#">Sandhangan</a>
-        <a className={style.item} href="#">Pasangan</a>
+        <Link className={style.item} to="#">Hanacaraka</Link>
+        <Link className={style.item} to="#">Sandhangan</Link>
+        <Link className={style.item} to="#">Pasangan</Link>
       </ul>
     </nav>
   )
