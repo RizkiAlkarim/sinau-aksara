@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import style from "./learnnavbar.module.css"
+import style from "./learnmenu.module.css"
 
-function LearnNavbar() {
+function LearnMenu() {
   return (
     <nav className={style.container}>
       <h1 className={style.title}>LEARN</h1>
@@ -14,4 +14,4 @@ function LearnNavbar() {
   )
 }
 
-export default LearnNavbar
+export default LearnMenu

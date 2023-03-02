@@ -1,11 +1,11 @@
 import Header from "../components/Header/Header"
-import Navbar from "../components/Navbar/Navbar"
+import MainMenu from "../components/MainMenu/MainMenu"
 
 function Home() {
   return (
     <div>
         <Header />
-        <Navbar />
+        <MainMenu />
     </div>
   )
 }

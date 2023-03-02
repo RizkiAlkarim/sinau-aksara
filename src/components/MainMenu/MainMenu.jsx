@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import style from "./navbar.module.css"
+import style from "./mainmenu.module.css"
 
-function Navbar() {
+function MainMenu() {
   return (
   <nav className={style.container}>
       <h1 className={style.title}>WELCOME</h1>
@@ -13,4 +13,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default MainMenu
