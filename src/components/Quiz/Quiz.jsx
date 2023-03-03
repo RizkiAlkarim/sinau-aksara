@@ -50,7 +50,6 @@ function Quiz() {
             <form className={style.answer} onSubmit={submitAnswer}>
                 <input className={style["answer-box"]} type="text" maxLength={1} onChange={handleChange}/>
                 <input className={style["answer-box"]} type="text" maxLength={1}  onChange={handleChange}/>
-                <button>kirim</button>
             </form>
         </div>
         <div className={style["button-container"]}>
