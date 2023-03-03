@@ -4,17 +4,17 @@ import hanacaraka from "../../data/aksara.js"
 import style from "./quiz.module.css"
 
 function Quiz() {
-    const [letter, setLetter] = useState(hanacaraka.aksara[Math.floor(Math.random() * hanacaraka.aksara.length)])
+    const [letter, setLetter] = useState(hanacaraka[Math.floor(Math.random() * hanacaraka.length)].aksara)
     const [tempLetter, setTempLetter] = useState("")
+    const [input, setInput] = useState()
 
-    const randomIndex = Math.floor(Math.random() * hanacaraka.aksara.length)
-    const aksara = hanacaraka.aksara[randomIndex]
+    const randomIndex = Math.floor(Math.random() * hanacaraka.length)
+    const aksara = hanacaraka[randomIndex].aksara
 
-    const {
-        register,
-        handleSubmit,
-        formState: {errors}
-    } = useForm()
+    function handleChange(event){
+        setInput(event.target.value)
+        console.log(input)
+    }
 
     function changeQuestion(){
         setTempLetter(letter)
@@ -24,9 +24,17 @@ function Quiz() {
         }
     }
 
-    function submitButton(){
+    function submitAnswer(event){
         //if(answer == question){}
+        // if(input.toLowerCase(input) == hanacaraka[current].letter){
+        //     changeQuestion()
+        // }
+        // else {
+        //     console.log("jawaban kamu salah")
+        // }
+        event.preventDefault()
         changeQuestion()
+        console.log(input)
     }
 
     function passButton(){
@@ -39,9 +47,10 @@ function Quiz() {
             <h1 className={style.letter}>{letter}</h1>
         </div>
         <div className={style["answer-container"]}>
-            <form className={style.answer} action="">
-                <input className={style["answer-box"]} type="text" maxLength={1}/>
-                <input className={style["answer-box"]} type="text" maxLength={1}/>
+            <form className={style.answer} onSubmit={submitAnswer}>
+                <input className={style["answer-box"]} type="text" maxLength={1} onChange={handleChange}/>
+                <input className={style["answer-box"]} type="text" maxLength={1}  onChange={handleChange}/>
+                <button>kirim</button>
             </form>
         </div>
         <div className={style["button-container"]}>
@@ -53,7 +62,7 @@ function Quiz() {
             </button>
             <button
                 className={style.submit}
-                onClick = {submitButton}
+                onClick = {submitAnswer}
             >
             submit
             </button>
