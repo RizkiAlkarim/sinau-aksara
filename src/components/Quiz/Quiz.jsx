@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
-import hanacaraka from "../../data/aksara.js"
+import hanacaraka from "../../data/hanacaraka.js"
 import style from "./quiz.module.css"
 
 function Quiz() {
