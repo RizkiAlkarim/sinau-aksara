@@ -4,11 +4,11 @@ import hanacaraka from "../../data/aksara.js"
 import style from "./quiz.module.css"
 
 function Quiz() {
-    const [letter, setLetter] = useState(hanacaraka[Math.floor(Math.random() * 20)])
+    const [letter, setLetter] = useState(hanacaraka.aksara[Math.floor(Math.random() * hanacaraka.aksara.length)])
     const [tempLetter, setTempLetter] = useState("")
 
-    const randomIndex = Math.floor(Math.random() * 20)
-    const aksara = hanacaraka[randomIndex]
+    const randomIndex = Math.floor(Math.random() * hanacaraka.aksara.length)
+    const aksara = hanacaraka.aksara[randomIndex]
 
     const {
         register,
