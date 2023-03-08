@@ -20,4 +20,5 @@ const hanacaraka = [
     {aksara: "ꦛ", letter:"tha"},
     {aksara: "ꦔ", letter:"nga"}
 ]
+
 export default hanacaraka

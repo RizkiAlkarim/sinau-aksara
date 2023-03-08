@@ -4,7 +4,7 @@ import style from "./mainmenu.module.css"
 function MainMenu() {
   return (
   <nav className={style.container}>
-      <h1 className={style.title}>WELCOME</h1>
+      <h1 className={style.title}>Sugeng Rawuh</h1>
       <ul className={style.items}>
         <Link className={style.item} to="/learn">Learn</Link>
         <Link className={style.item} to="/quiz">Quiz</Link>

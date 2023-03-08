@@ -20,9 +20,10 @@
 }
 
 .title{
-    font-family: Upakarti;
-    font-size: 4.5em;
-    font-weight: 500;
+    font-family: Monospace, Upakarti;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
     color: black;
 }
 
