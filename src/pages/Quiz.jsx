@@ -1,9 +1,9 @@
 import { useState } from "react"
-import hanacaraka from "../../data/hanacaraka.js"
-import style from "./quiz.module.css"
+import hanacaraka from "../data/hanacaraka.js"
+import Header from "../components/Header.jsx"
 
 function Quiz() {
-    
+
     const [current, setCurrent] = useState(0)
     const [input, setInput] = useState("")
 
@@ -13,7 +13,7 @@ function Quiz() {
     }
 
     function handleChange(event){
-            setInput(event.target.value)
+        setInput(event.target.value)
     }
 
     function submitAnswer(event){
@@ -23,23 +23,25 @@ function Quiz() {
             setInput("")
             setRandomAksara()
         } else {
+            setInput("")
             console.log("jawaban kamu salah")
         }
     }
 
     function passButton(){
+        setInput("")
         setRandomAksara()
+        console.log("Pass")
     }
 
   return (
-    <div className={style.container}>
-        <div className={style.question}>
-            <h1 className={style.letter}>{hanacaraka[current].aksara}</h1>
-        </div>
-        <div className={style["answer-container"]}>
-            <form className={style.answer} onSubmit={submitAnswer}>
+    <div className='h-screen flex flex-col justify-between'>
+        <Header />
+        <div className="flex flex-col justify-center items-center">
+            <h1 className='text-8xl text-red-600 font-bold mb-5'>{hanacaraka[current].aksara}</h1>
+            <form className='flex justify-center gap-8' onSubmit={submitAnswer}>
                 <input 
-                    className={style["answer-box"]}
+                    className='h-10 w-20 text-2xl font-bold text-center border border-orange-200 rounded p-3 outline-0 caret-transparent focus:border-red-600'
                     type="text"
                     value={input}
                     maxLength={3}
@@ -47,18 +49,12 @@ function Quiz() {
                 />
             </form>
         </div>
-        <div className={style["button-container"]}>
+        <div className="md:w-4/12 lg:w-2/12 p-2 mx-auto w-full">
             <button 
-                className={style.pass}
+                className='w-full px-3 py-2 bg-orange-200 text-red-600 rounded-md font-bold text-xl text-center tracking-wide'
                 onClick={passButton}
             >
-            pass
-            </button>
-            <button
-                className={style.submit}
-                onClick = {submitAnswer}
-            >
-            submit
+            Pass
             </button>
         </div>
     </div>
