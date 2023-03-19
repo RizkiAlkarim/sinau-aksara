@@ -7,7 +7,6 @@ function Home() {
     {label: "Quiz", href:"/quiz"},
     {label: "About", href:"/about"},
   ]
-  let button = 'bg-orange-200 text-red-600 rounded-md px-3 py-2 font-bold text-lg text-center'
 
   return (
   <div className="h-screen flex flex-col">
@@ -16,7 +15,12 @@ function Home() {
       <h1 className='text-4xl font-bold text-center mb-5'>Sugeng <br/> Rawuh</h1>
       <ul className='grid grid-rows-2 gap-3'>
         {homeItems.map(({label, href})=>
-          <Link key={label} className={button} to={href}>{label}</Link>
+          <Link
+            key={label}
+            className='bg-orange-200 text-red-600 rounded-md px-3 py-2 font-bold text-lg text-center'
+            to={href}>
+            {label}
+          </Link>
         )}
       </ul>
     </nav>
