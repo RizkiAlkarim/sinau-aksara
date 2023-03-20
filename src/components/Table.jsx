@@ -4,15 +4,18 @@ import back from '../assets/left-arrow.png'
 import next from '../assets/right-arrow.png'
 import hanacaraka from '../data/hanacaraka'
 import pasangan from '../data/pasangan'
+import sandhangan from '../data/sandhangan'
 
 const tableItems = [
     hanacaraka,
-    pasangan
+    pasangan,
+    sandhangan
 ]
 
 const tableItemsName = [
     'Hanacaraka',
-    'Pasangan'
+    'Pasangan',
+    'Sandhangan'
 ]
 
 function Table() {
@@ -29,8 +32,6 @@ function Table() {
         setTableIndex((prev)=> prev + 1)
     }
 
-    console.log(tableItems.length)
-
   return (
     <div className='flex flex-col justify-center items-center px-5'>
         <div className='flex justify-center items-center gap-2 mb-5'>
@@ -42,10 +43,10 @@ function Table() {
                 <img className='h-4' src={next} alt="next" onClick={nextTable}/>
             </button>
         </div>
-        <div className='grid grid-cols-5 grid-rows-4 place-items-center w-full bg-orange-200 rounded'>
+        <div className='grid grid-cols-5 grid-flow-row place-items-center bg-transparent w-full rounded overflow-hidden'>
             {tableItems[tableIndex].map(({aksara, letter})=>(
-                <div className='w-full' key={letter}>
-                    <div className={`font-bold text-3xl text-red-600 text-center p-3 ${tableIndex == 1 && 'mb-7'}`}>
+                <div className='w-full rounded-md' key={letter}>
+                    <div className={`font-bold text-3xl text-red-600 text-center  bg-orange-200  p-3 ${tableIndex !== 0 && 'pb-7'}`}>
                         <h1>{aksara}</h1>
                     </div>
                     <div className='font-thin text-sm text-black text-center bg-orange-300/50 p-2'>
