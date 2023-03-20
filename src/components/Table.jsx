@@ -32,7 +32,7 @@ function Table() {
     console.log(tableItems.length)
 
   return (
-    <div className='flex flex-col justify-center items-center px-5 h-full'>
+    <div className='flex flex-col justify-center items-center px-5'>
         <div className='flex justify-center items-center gap-2 mb-5'>
             <button>
                 <img className='h-4' src={back} alt="back" onClick={previousTable}/>
@@ -42,11 +42,15 @@ function Table() {
                 <img className='h-4' src={next} alt="next" onClick={nextTable}/>
             </button>
         </div>
-        <div className='grid grid-cols-5 grid-rows-4 place-items-center w-full bg-orange-200 rounded p-2'>
+        <div className='grid grid-cols-5 grid-rows-4 place-items-center w-full bg-orange-200 rounded'>
             {tableItems[tableIndex].map(({aksara, letter})=>(
-                <div key={letter}>
-                    <div className={`font-bold text-3xl text-red-600 text-center ${tableIndex == 1 && 'mb-7'}`}>{aksara}</div>
-                    <div className='font-thin text-sm text-gray-700 text-center'>{letter}</div>
+                <div className='w-full' key={letter}>
+                    <div className={`font-bold text-3xl text-red-600 text-center p-3 ${tableIndex == 1 && 'mb-7'}`}>
+                        <h1>{aksara}</h1>
+                    </div>
+                    <div className='font-thin text-sm text-black text-center bg-orange-300/50 p-2'>
+                        <h1>{letter}</h1>
+                    </div>
                 </div>
             ))}
             
