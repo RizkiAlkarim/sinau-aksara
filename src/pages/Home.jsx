@@ -13,7 +13,7 @@ function Home() {
   <Header />
   <nav className='flex flex-col justify-center items-center gap-2 py-2 h-full'>
       <h1 className='text-4xl font-bold text-center mb-5'>Sugeng <br/> Rawuh</h1>
-      <ul className='grid grid-rows-2 gap-3'>
+      <ul className='grid grid-rows-2 gap-3 w-[100px]'>
         {homeItems.map(({label, href})=>
           <Link
             key={label}
