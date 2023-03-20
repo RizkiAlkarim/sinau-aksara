@@ -34,13 +34,13 @@ function Table() {
   return (
     <div className='flex flex-col justify-center items-center px-5 h-full'>
         <div className='flex justify-center items-center gap-2 mb-5'>
-            <Link>
+            <button>
                 <img className='h-4' src={back} alt="back" onClick={previousTable}/>
-            </Link>
+            </button>
             <h1 className='font-bold text-2xl'>{tableItemsName[tableIndex]}</h1>
-            <Link>
+            <button>
                 <img className='h-4' src={next} alt="next" onClick={nextTable}/>
-            </Link>
+            </button>
         </div>
         <div className='grid grid-cols-5 grid-rows-4 place-items-center w-full bg-orange-200 rounded p-2'>
             {tableItems[tableIndex].map(({aksara, letter})=>(
