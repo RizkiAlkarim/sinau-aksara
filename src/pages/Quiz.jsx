@@ -1,6 +1,6 @@
 import { useState } from "react"
-// import hanacaraka from "../data/hanacaraka.js"
-import hanacaraka from '../data/pasangan.js'
+import hanacaraka from "../data/hanacaraka.js"
+// import hanacaraka from '../data/pasangan.js'
 import Header from "../components/Header.jsx"
 
 function Quiz() {

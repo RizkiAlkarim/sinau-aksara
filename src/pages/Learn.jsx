@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
+import Table from "../components/Table"
 
 function Learn() {
   const learnItems = [
@@ -11,7 +12,8 @@ function Learn() {
   return (
     <div className="h-screen flex flex-col">
       <Header />
-      <nav className='flex flex-col justify-center items-center gap-2 py-2 h-full'>
+      <Table />
+      {/* <nav className='flex flex-col justify-center items-center gap-2 py-2 h-full'>
         <h1 className='sans text-4xl font-bold text-center mb-5'>Learn</h1>
         <ul className='grid grid-rows-2 gap-3'>
           { learnItems.map(({label, href}) =>
@@ -23,7 +25,7 @@ function Learn() {
             </Link>
           )}
         </ul>
-      </nav>
+      </nav> */}
     </div>
   )
 }
