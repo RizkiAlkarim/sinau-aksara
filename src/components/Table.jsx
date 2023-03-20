@@ -5,6 +5,8 @@ import next from '../assets/right-arrow.png'
 import hanacaraka from '../data/hanacaraka'
 import pasangan from '../data/pasangan'
 import sandhangan from '../data/sandhangan'
+import { motion } from 'framer-motion'
+import { riseAnimation, delayFadeInAnimation, fadeInAnimation } from '../utils/animation'
 
 const tableItems = [
     hanacaraka,
@@ -33,8 +35,8 @@ function Table() {
     }
 
   return (
-    <div className='flex flex-col justify-center items-center px-5'>
-        <div className='flex justify-center items-center gap-2 mb-5'>
+    <motion.div className='flex flex-col justify-center items-center px-5' initial='initial' animate='animate'>
+        <motion.div className='flex justify-center items-center gap-2 mb-5' variants={riseAnimation}>
             <button>
                 <img className='h-4' src={back} alt="back" onClick={previousTable}/>
             </button>
@@ -42,8 +44,11 @@ function Table() {
             <button>
                 <img className='h-4' src={next} alt="next" onClick={nextTable}/>
             </button>
-        </div>
-        <div className='w-full md:w-9/12 lg:w-7/12 grid grid-cols-5 grid-flow-row place-items-center bg-transparent rounded overflow-hidden'>
+        </motion.div>
+        <motion.div
+            className='w-full md:w-9/12 lg:w-7/12 grid grid-cols-5 grid-flow-row place-items-center bg-transparent rounded overflow-hidden'
+            variants={delayFadeInAnimation}
+        >
             {tableItems[tableIndex].map(({aksara, letter})=>(
                 <div className='w-full rounded-md' key={letter}>
                     <div className={`font-bold text-3xl text-red-600 text-center  bg-orange-200  p-3 ${tableIndex !== 0 && 'pb-7'}`}>
@@ -55,8 +60,8 @@ function Table() {
                 </div>
             ))}
             
-        </div>
-    </div>
+        </motion.div>
+    </motion.div>
   )
 }
 
