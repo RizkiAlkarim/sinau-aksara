@@ -45,7 +45,7 @@ function Table() {
         <div className='grid grid-cols-5 grid-rows-4 place-items-center w-full bg-orange-200 rounded p-2'>
             {tableItems[tableIndex].map(({aksara, letter})=>(
                 <div key={letter}>
-                    <div className='font-bold text-3xl text-red-600 text-center'>{aksara}</div>
+                    <div className={`font-bold text-3xl text-red-600 text-center ${tableIndex == 1 && 'mb-7'}`}>{aksara}</div>
                     <div className='font-thin text-sm text-gray-700 text-center'>{letter}</div>
                 </div>
             ))}
