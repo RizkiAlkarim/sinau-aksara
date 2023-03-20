@@ -4,24 +4,28 @@ import Context from "../Context"
 import logo from "../assets/logo.svg"
 import lightMode from "../assets/light-mode.png"
 import darkMode from "../assets/dark-mode.png"
+import { motion } from "framer-motion"
+import { fadeInAnimation, rotateAnimation } from "../utils/animation"
 
 function Header() {
   const { ThemeContext } = Context
   const { theme, changeTheme} = useContext(ThemeContext)
 
   return (
-    <div className="flex justify-between items-center px-3 py-2" style={{backgroundColor: theme ? "grey" : "white"}}>
+    <motion.div initial='initial' animate='animate' className="flex justify-between items-center px-3 py-2" style={{backgroundColor: theme ? "grey" : "white"}}>
         <Link className='flex justify-center items-center' to="/">
-          <img className='h-5' src={logo} alt="logo"/>
+          <motion.img className='h-5' src={logo} alt="logo" variants={fadeInAnimation}/>
         </Link>
         <div>
-          <img className='h-8'
+          <motion.img
+               className='h-8'
                src={theme ? darkMode : lightMode}
                alt="theme"
                onClick={changeTheme}
+               variants={rotateAnimation}
           />
         </div>
-    </div>
+    </motion.div>
   )
 }
 
