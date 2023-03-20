@@ -43,7 +43,7 @@ function Table() {
                 <img className='h-4' src={next} alt="next" onClick={nextTable}/>
             </button>
         </div>
-        <div className='grid grid-cols-5 grid-flow-row place-items-center bg-transparent w-full rounded overflow-hidden'>
+        <div className='w-full md:w-9/12 lg:w-7/12 grid grid-cols-5 grid-flow-row place-items-center bg-transparent rounded overflow-hidden'>
             {tableItems[tableIndex].map(({aksara, letter})=>(
                 <div className='w-full rounded-md' key={letter}>
                     <div className={`font-bold text-3xl text-red-600 text-center  bg-orange-200  p-3 ${tableIndex !== 0 && 'pb-7'}`}>
