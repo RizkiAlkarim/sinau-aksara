@@ -22,8 +22,9 @@ function Home() {
           <Link
             key={label}
             className='bg-orange-200 text-red-600 rounded-md px-3 py-2 font-bold text-lg text-center'
-            to={href}>
-            <motion.a variants={delayFadeInAnimation}>{label}</motion.a>
+            to={href}
+          >
+            {label}
           </Link>
         )}
       </motion.ul>
