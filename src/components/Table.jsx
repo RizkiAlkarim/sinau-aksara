@@ -50,11 +50,11 @@ function Table() {
             variants={delayFadeInAnimation}
         >
             {tableItems[tableIndex].map(({aksara, letter})=>(
-                <div className='w-full rounded-md border border-red-600' key={letter}>
-                    <div className={`font-bold text-3xl text-red-600 text-center ${tableIndex !== 0 && 'pb-7'}`}>
-                        <h1>{aksara}</h1>
+                <div className='w-full rounded-md md:border-2 border border-red-600' key={letter}>
+                    <div className={`${tableIndex !== 0 && 'pt-3 pb-7'}`}>
+                        <h1 className='w-full font-bold md:text-4xl text-3xl text-red-600 inline-block text-center align-middle'>{aksara}</h1>
                     </div>
-                    <div className={`font-thin text-sm text-black text-center ${tableIndex !== 0 && 'pb-2'}`}>
+                    <div className={`md:font-bold font-thin text-sm text-black text-center ${tableIndex !== 0 && 'pb-2'}`}>
                         <h1>{letter}</h1>
                     </div>
                 </div>
