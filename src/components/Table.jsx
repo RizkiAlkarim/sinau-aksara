@@ -36,7 +36,7 @@ function Table() {
 
   return (
     <motion.div className='flex flex-col justify-center items-center px-5' initial='initial' animate='animate'>
-        <motion.div className='flex justify-center items-center gap-2 mb-5' variants={riseAnimation}>
+        <motion.div className='flex justify-center items-center gap-4 mb-5' variants={riseAnimation}>
             <button>
                 <img className='h-4' src={back} alt="back" onClick={previousTable}/>
             </button>
@@ -46,15 +46,15 @@ function Table() {
             </button>
         </motion.div>
         <motion.div
-            className='w-full md:w-9/12 lg:w-7/12 grid grid-cols-5 grid-flow-row place-items-center bg-transparent rounded overflow-hidden'
+            className='w-full md:w-9/12 lg:w-7/12 grid grid-cols-5 grid-flow-row place-items-center bg-transparent rounded gap-2'
             variants={delayFadeInAnimation}
         >
             {tableItems[tableIndex].map(({aksara, letter})=>(
-                <div className='w-full rounded-md' key={letter}>
-                    <div className={`font-bold text-3xl text-red-600 text-center  bg-orange-200  p-3 ${tableIndex !== 0 && 'pb-7'}`}>
+                <div className='w-full rounded-md border border-red-600' key={letter}>
+                    <div className={`font-bold text-3xl text-red-600 text-center ${tableIndex !== 0 && 'pb-7'}`}>
                         <h1>{aksara}</h1>
                     </div>
-                    <div className='font-thin text-sm text-black text-center bg-orange-300/50 p-2'>
+                    <div className={`font-thin text-sm text-black text-center ${tableIndex !== 0 && 'pb-2'}`}>
                         <h1>{letter}</h1>
                     </div>
                 </div>
