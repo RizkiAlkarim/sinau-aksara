@@ -9,6 +9,8 @@ import pasangan from '../data/pasangan'
 import sandhangan from '../data/sandhangan'
 import { motion } from 'framer-motion'
 import { riseAnimation, delayFadeInAnimation, fadeInAnimation } from '../utils/animation'
+import Card from './Card'
+import BigCard from './BigCard'
 
 const tableItems = [
     hanacaraka,
@@ -42,43 +44,45 @@ function Table() {
         setIsHidden((prev)=> !prev)
     }
 
-    const zoomCard = () => {
+    const zoomCard = (event) => {
         setIsCardClicked((prev)=> !prev)
+        console.log(event)
     }
 
   return (
-    <motion.div className='container mx-auto flex flex-col justify-center items-center px-5' initial='initial' animate='animate'>
-        <div className='w-full flex justify-center items-center mb-5' >
-        <motion.div className='flex justify-center items-center gap-4' variants={riseAnimation}>
-            <button>
-                <img className='h-4' src={back} alt="back" onClick={previousTable}/>
-            </button>
-            <h1 className='font-bold text-2xl'>{tableItemsName[tableIndex]}</h1>
-            <button>
-                <img className='h-4' src={next} alt="next" onClick={nextTable}/>
-            </button>
-        </motion.div>
-        <button onClick={hideLetter}><img src={isHidden ? show : hide} alt="" /></button>
+    <motion.div className='relative container mx-auto flex flex-col justify-center items-center px-5 py-4' initial='initial' animate='animate'>
+        <div className='relative w-full flex justify-center items-center mb-5' >
+            <motion.div className='flex justify-center items-center gap-4' variants={riseAnimation}>
+                {/* <button>
+                    <img className='h-4' src={back} alt="back" onClick={previousTable}/>
+                </button> */}
+                <h1 className='font-bold text-2xl'>{tableItemsName[tableIndex]}</h1>
+                {/* <button>
+                    <img className='h-4' src={next} alt="next" onClick={nextTable}/>
+                </button> */}
+            </motion.div>
+            <button className='absolute right-0'onClick={hideLetter}><img src={isHidden ? show : hide} alt="" /></button>
         </div>
         <motion.div
             className='w-full h-full md:w-7/12 lg:w-5/12 xl:w-4/12 grid grid-cols-5 grid-flow-row place-items-center rounded gap-2'
             variants={delayFadeInAnimation}
         >
             {tableItems[tableIndex].map(({aksara, letter})=>(
-            <div 
-                className={`w-full rounded-md md:border-2 border border-red-600`}
-                onClick={zoomCard}
-                key={letter}
-            >
-                <div className='w-full pt-3 pb-7'>
-                    <h1 className='w-full font-bold md:text-4xl text-3xl text-red-600 inline-block text-center align-middle'>{aksara}</h1>
-                </div>
-                <div className={`md:font-bold font-thin md:text-lg text-sm text-center pb-4 ${isHidden ? 'text-transparent' : "text-black"}`}>
-                    <h1 className=''>{letter}</h1>
-                </div>
-            </div>
+                <Card 
+                    aksara={aksara}
+                    letter={letter}
+                    key={letter}
+                    onClick={zoomCard}
+                    isHidden={isHidden}
+                />
             ))}
         </motion.div>
+        <BigCard
+            // aksara={aksara}
+            // letter={letter}
+            onClick={zoomCard}
+            isCardClicked={isCardClicked}
+        />
     </motion.div>
   )
 }
