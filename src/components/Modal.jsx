@@ -1,6 +1,4 @@
-import React from 'react'
-
-function BigCard({aksara, letter, onClick, isCardClicked}) {
+function Modal({aksara, letter, onClick, isCardClicked}) {
   return (
     <div className={`absolute h-full inset-0 bg-white ${isCardClicked ? 'block' : 'hidden'}`} onClick={onClick}>
       <div
@@ -16,4 +14,4 @@ function BigCard({aksara, letter, onClick, isCardClicked}) {
   )
 }
 
-export default BigCard
+export default Modal
